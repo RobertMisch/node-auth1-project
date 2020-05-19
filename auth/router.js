@@ -10,6 +10,7 @@ router.post("/register", (req, res) => {
 
   if (isValid(credentials)) {
     const rounds = process.env.BCRYPT_ROUNDS || 16;
+    //this is how many rounds that we'll hash our password. more the more encrypted. but slower it runs
 
     // hash the password
     const hash = bcryptjs.hashSync(credentials.password, rounds);
